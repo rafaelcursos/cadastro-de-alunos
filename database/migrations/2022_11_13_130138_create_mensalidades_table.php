@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('mensalidades', function (Blueprint $table) {
             $table->id();
+            $table->float('valor');
+            $table->integer('vencimento');
+            $table->boolean('pagou');
             $table->timestamps();
         });
     }
