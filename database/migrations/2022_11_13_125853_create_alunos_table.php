@@ -16,15 +16,16 @@ return new class extends Migration
         Schema::create('alunos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('telefone');
+            $table->string('responsavel')->nullable();
+            $table->string('nascimento')->nullable();
             $table->string('imagem')->nullable();
             $table->string('rua')->nullable();
             $table->string('bairro')->nullable();
             $table->string('cidade')->nullable();
             $table->integer('numero')->nullable();
-            $table->string('telefone');
             $table->string('email')->nullable();
             $table->string('instagram')->nullable();
-            $table->string('responsavel')->nullable();
             $table->timestamps();
         });
     }

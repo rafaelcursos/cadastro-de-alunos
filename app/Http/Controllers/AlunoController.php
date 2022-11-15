@@ -11,8 +11,8 @@ class AlunoController extends Controller
     public function find($id)
     {
         $aluno = Aluno::find($id);
-        $mensalidades = $aluno->mensalidades;
-        return view('/aluno.info', ['aluno' => $aluno, 'mensalidades' => $mensalidades]);
+        $cursos = $aluno->cursos;
+        return view('/aluno.info', ['aluno' => $aluno, 'cursos' => $cursos]);
     }
 
     public function create()
@@ -25,11 +25,13 @@ class AlunoController extends Controller
         $aluno = new Aluno();
 
         $aluno->nome = $request->nome;
+        $aluno->telefone = $request->telefone;
+        $aluno->responsavel = $request->responsavel;
+        $aluno->nascimento = $request->nascimento;
         $aluno->rua = $request->rua;
         $aluno->bairro = $request->bairro;
         $aluno->cidade = $request->cidade;
         $aluno->numero = $request->numero;
-        $aluno->telefone = $request->telefone;
         $aluno->email = $request->email;
         $aluno->instagram = $request->instagram;
 
