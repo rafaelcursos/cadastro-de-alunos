@@ -19,9 +19,9 @@ class Aluno extends Model
         return $this->belongsToMany(Curso::class);
     }
 
-    public function enderecos()
+    public function mensalidades()
     {
-        return $this->belongsToMany(Endereco::class);
+        return $this->belongsToMany(Mensalidade::class);
     }
 
     public function dias()

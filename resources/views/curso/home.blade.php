@@ -14,8 +14,8 @@
         <div class="row mb-5">
             <div class="col-12 d-flex justify-content-space-between">
 
-                <div><h1>Todos os alunos</h1></div>
-                <div class="m-auto"><a href="/aluno/criar" class="btn btn-primary">Novo Aluno</a></div>                
+                <div><h1>Todos os cursos</h1></div>
+                <div class="m-auto"><a href="/curso/criar" class="btn btn-primary">Novo Curso</a></div>                
             </div>
         </div>
         <div class="row">
@@ -23,21 +23,21 @@
                 <table class="table table-striped border">
                     <thead>
                         <tr>
-                            <th>Aluno</th>
-                            <th>Telefone</th>
+                            <th>Curso</th>
+                            <th>Descrição</th>
                             <th>Editar</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($alunos as $aluno)
+                        @foreach($cursos as $curso)
                         <tr>
                             <td>
-                                <img width="100" class="img-fluid" src="{{Storage::url($aluno->imagem)}}" alt="{{$aluno->nome}}">
-                                <p>{{$aluno->nome}}</p>
+                                <img width="100" class="img-fluid" src="{{Storage::url($curso->imagem)}}" alt="{{$curso->curso}}">
+                                <p>{{$curso->curso}}</p>
                             </td>
-                            <td>{{$aluno->telefone}}</td>
+                            <td>{{$curso->descricao}}</td>
                             <td>
-                                <a href="/aluno/ver/{{$aluno->id}}" class="btn btn-primary">Editar</a>
+                                <a href="/curso/ver/{{$curso->id}}" class="btn btn-primary">Editar</a>
                             </td>
                         </tr>
                         @endforeach

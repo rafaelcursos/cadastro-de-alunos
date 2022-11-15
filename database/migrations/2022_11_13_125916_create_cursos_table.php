@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('cursos', function (Blueprint $table) {
             $table->id();
             $table->string('curso');
+            $table->string('descricao');
+            $table->string('imagem');
+            $table->float('valor');
+            $table->integer('duracao');
             $table->timestamps();
         });
     }

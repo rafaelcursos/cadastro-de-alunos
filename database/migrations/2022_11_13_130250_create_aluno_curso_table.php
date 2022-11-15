@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('matriculas', function (Blueprint $table) {
-            $table->id();
-            $table->float('valor');
-            $table->boolean('pagou');
+        Schema::create('aluno_curso', function (Blueprint $table) {
+            $table->foreignId('aluno_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('curso_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('matriculas');
+        Schema::dropIfExists('aluno_curso');
     }
 };

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->float('valor');
             $table->integer('vencimento');
-            $table->boolean('pagou');
             $table->timestamps();
         });
     }

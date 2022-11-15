@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('enderecos', function (Blueprint $table) {
-            $table->id();
-            $table->string('rua')->nullable();
-            $table->string('bairro')->nullable();
-            $table->string('cidade')->nullable();
-            $table->float('numero')->nullable();
+        Schema::create('aluno_horario', function (Blueprint $table) {
+            $table->foreignId('aluno_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('horario_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('enderecos');
+        Schema::dropIfExists('aluno_horario');
     }
 };
