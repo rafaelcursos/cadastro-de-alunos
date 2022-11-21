@@ -30,7 +30,12 @@
                 <div class="col-6">
                     <div class="d-flex justify-content-end align-items-center">
                         <a href="/home" class="btn btn-secondary m-1">Voltar</a>
-                        <a href="/home" class="btn btn-primary m-1">Editar</a>
+                        <a href="/aluno/update/{{$aluno->id}}" class="btn btn-primary m-1">Editar</a>
+                        <form action="#" method="post" class="form-group">
+                            @csrf
+                            @method('delete')
+                            <button onclick="return confirm('Deseja realmente excluir o aluno?')" class="btn btn-danger" type="submit">Deletar</button>
+                        </form>
                     </div>
                 </div>
             </div>

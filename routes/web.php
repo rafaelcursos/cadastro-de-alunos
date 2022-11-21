@@ -25,6 +25,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/aluno/ver/{id}', [App\Http\Controllers\AlunoController::class, 'find'])->middleware('auth');
 Route::get('/aluno/criar', [App\Http\Controllers\AlunoController::class, 'create'])->middleware('auth');
 Route::post('/aluno/criar', [App\Http\Controllers\AlunoController::class, 'store'])->middleware('auth');
+Route::get('/aluno/update/{id}', [\App\Http\Controllers\AlunoController::class, 'update'])->middleware('auth');
+Route::post('/aluno/update/{id}', [\App\Http\Controllers\AlunoController::class, 'updateAction'])->middleware('auth');
+
 Route::get('/aluno/pagar/{id}', [App\Http\Controllers\PagamentoController::class, 'index'])->middleware('auth');
 Route::post('/aluno/pagar/{id}', [App\Http\Controllers\PagamentoController::class, 'store'])->middleware('auth');
 

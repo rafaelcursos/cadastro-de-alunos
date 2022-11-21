@@ -46,5 +46,11 @@ class AlunoController extends Controller
         return redirect('/mensalidade/home');
     }
 
+    public function update($id)
+    {
+        $aluno = Aluno::find($id);
+
+        dd($aluno);
+    }
 
 }
