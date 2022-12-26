@@ -12,12 +12,12 @@ class AlunoController extends Controller
     {
         $aluno = Aluno::find($id);
         $cursos = $aluno->cursos;
-        return view('/aluno.info', ['aluno' => $aluno, 'cursos' => $cursos]);
+        return view('alunos.info', ['aluno' => $aluno, 'cursos' => $cursos]);
     }
 
     public function create()
     {
-        return view('/aluno.criar');
+        return view('alunos.criar');
     }
 
     public function store(Request $request)
@@ -43,7 +43,7 @@ class AlunoController extends Controller
 
         $aluno->save();
 
-        return redirect('/mensalidade/home');
+        return redirect('home')->with('aluno cadastrado com sucesso!');
     }
 
     public function update($id)
@@ -51,6 +51,12 @@ class AlunoController extends Controller
         $aluno = Aluno::find($id);
 
         dd($aluno);
+    }
+
+    public function destroy($id){
+        $aluno = Aluno::find($id)->delete();
+
+        return redirect('home')->with('msg', 'aluno deletado com sucesso!');
     }
 
 }

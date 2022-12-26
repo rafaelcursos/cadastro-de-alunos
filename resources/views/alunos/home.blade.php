@@ -17,7 +17,7 @@
                 <div>
                     <h1>Todos os alunos</h1>
                 </div>
-                <div class="m-auto"><a href="/aluno/criar" class="btn btn-primary">Novo Aluno</a></div>
+                <div class="m-auto"><a href="/alunos/criar" class="btn btn-primary">Novo Aluno</a></div>
             </div>
         </div>
         <div class="row">
@@ -42,10 +42,10 @@
                                 </td>
                                 <td>{{ $aluno->telefone }}</td>
                                 <td>
-                                    <a href="/aluno/ver/{{ $aluno->id }}" class="btn btn-primary">Ver Aluno</a>
+                                    <a href="alunos/ver/{{ $aluno->id }}" class="btn btn-primary">Ver Aluno</a>
                                 </td>
                                 <td>
-                                    <a href="/aluno/pagar/{{ $aluno->id }}" class="btn btn-success">Pagar</a>
+                                    <a href="alunos/pagar/{{ $aluno->id }}" class="btn btn-success">Pagar</a>
                                 </td>
                             </tr>
                         @endforeach

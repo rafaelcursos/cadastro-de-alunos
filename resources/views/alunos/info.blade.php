@@ -19,19 +19,18 @@
         </div>
         <div class="col-12">
             <div  class="text-center">
-                <h1>Rafael</h1>
-                <h5>Cursos de Informática</h5>
+                <h1>{{$aluno->nome}}</h1>
             </div>
             <div class="row">
+                <div id="img-modal" class="col-12"> <img src="{{Storage::url($aluno->imagem)}}" alt="{{$aluno->nome}}"> </div>
                 <div class="col-6">
-                    <div> <img width="100" class="img-fluid" src="{{Storage::url($aluno->imagem)}}" alt="{{$aluno->nome}}"> </div>
-                    <div> <h5>{{$aluno->nome}}</h5> </div>
+                    <div> <img onclick="mostrafoto();" style="cursor: pointer;" width="100" class="img-fluid" src="{{Storage::url($aluno->imagem)}}" alt="{{$aluno->nome}}"> </div>
                 </div>
                 <div class="col-6">
                     <div class="d-flex justify-content-end align-items-center">
                         <a href="/home" class="btn btn-secondary m-1">Voltar</a>
-                        <a href="/aluno/update/{{$aluno->id}}" class="btn btn-primary m-1">Editar</a>
-                        <form action="#" method="post" class="form-group">
+                        <a href="/alunos/update/{{$aluno->id}}" class="btn btn-primary m-1">Editar</a>
+                        <form action="/alunos/delete/{{$aluno->id}}" method="post" class="form-group">
                             @csrf
                             @method('delete')
                             <button onclick="return confirm('Deseja realmente excluir o aluno?')" class="btn btn-danger" type="submit">Deletar</button>

@@ -1,0 +1,6 @@
+#img-modal {
+    display: none;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+}

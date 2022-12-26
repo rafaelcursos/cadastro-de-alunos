@@ -22,14 +22,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/aluno/ver/{id}', [App\Http\Controllers\AlunoController::class, 'find'])->middleware('auth');
-Route::get('/aluno/criar', [App\Http\Controllers\AlunoController::class, 'create'])->middleware('auth');
-Route::post('/aluno/criar', [App\Http\Controllers\AlunoController::class, 'store'])->middleware('auth');
-Route::get('/aluno/update/{id}', [\App\Http\Controllers\AlunoController::class, 'update'])->middleware('auth');
-Route::post('/aluno/update/{id}', [\App\Http\Controllers\AlunoController::class, 'updateAction'])->middleware('auth');
+Route::get('/alunos/ver/{id}', [App\Http\Controllers\AlunoController::class, 'find'])->middleware('auth');
+Route::get('/alunos/criar', [App\Http\Controllers\AlunoController::class, 'create'])->middleware('auth');
+Route::post('/alunos/criar', [App\Http\Controllers\AlunoController::class, 'store'])->middleware('auth');
+Route::get('/alunos/update/{id}', [\App\Http\Controllers\AlunoController::class, 'update'])->middleware('auth');
+Route::post('/alunos/update/{id}', [\App\Http\Controllers\AlunoController::class, 'updateAction'])->middleware('auth');
+Route::delete('alunos/delete/{id}', [App\Http\Controllers\AlunoController::class, 'destroy'])->middleware('auth');
 
-Route::get('/aluno/pagar/{id}', [App\Http\Controllers\PagamentoController::class, 'index'])->middleware('auth');
-Route::post('/aluno/pagar/{id}', [App\Http\Controllers\PagamentoController::class, 'store'])->middleware('auth');
+Route::get('/alunos/pagar/{id}', [App\Http\Controllers\PagamentoController::class, 'index'])->middleware('auth');
+Route::post('/alunos/pagar/{id}', [App\Http\Controllers\PagamentoController::class, 'store'])->middleware('auth');
 
 Route::get('/mensalidade/home', [App\Http\Controllers\MensalidadeController::class, 'index'])->middleware('auth');
 Route::post('/mensalidade/create/{id}', [App\Http\Controllers\MensalidadeController::class, 'store'])->middleware('auth');

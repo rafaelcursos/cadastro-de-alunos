@@ -4,6 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    {{-- ################################################################### --}}
+    {{-- Meus assets --}}
+    {{-- styles --}}
+    <link rel="stylesheet" href="/css/styles.css">
+
+    {{-- scripts --}}
+    <script src="/js/script.js" defer></script>
+    {{-- ################################################################### --}}
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-6 m-auto">
                 <h2>Novo Aluno</h2>
-                <form action="/aluno/criar" method="post" class="form-group" enctype="multipart/form-data">
+                <form action="/alunos/criar" method="post" class="form-group" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label class="form-label" for="nome">Nome</label>

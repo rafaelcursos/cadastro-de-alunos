@@ -25,6 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         $alunos = Aluno::orderBy('id', 'desc')->get();
-        return view('home', ['alunos' => $alunos]);
+        return view('alunos.home', ['alunos' => $alunos]);
     }
 }
